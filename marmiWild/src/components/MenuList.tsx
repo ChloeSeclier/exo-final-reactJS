@@ -6,11 +6,9 @@ function MenuList({ foodItems }) {
   return (
     <>
       {/* render a MenuItem component for each element of the foodItems array */}
-      {foodItems.map((id) => (
-        <MenuItem key={id} />
+      {foodItems.map((item) => (
+        <MenuItem key={item.id} {...item} />
       ))}
-
-
     </>
   );
 }
