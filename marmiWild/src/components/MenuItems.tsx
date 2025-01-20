@@ -4,17 +4,13 @@ function MenuItem(props) {
     return (
       <section className="itemContainer">
         <figure className="imgContainer">
-          {/* the image will receive the url src from the props */}
-          <img src="" alt="" />
+          <img src={props.foodImage} alt={props.itemName} />
           <figcaption>
-            {/* the h2 will receive the item name from the props */}
-            <h2>{}</h2>
-            {/* the p will receive the item description from the props */}
-            <p>{}</p>
+            <h2>{props.itemName}</h2>
+            <p>{props.description}</p>
           </figcaption>
         </figure>
-        {/* the span will receive the item price from the props */}
-        <aside>{} EUR</aside>
+        <aside>{props.price} EUR</aside>
   
         {/* the button to play with the isFavorite state:
                 - onClick, will toggle the isFavorite state,
