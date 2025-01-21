@@ -1,6 +1,14 @@
+
+import { useState } from "react";
+
 function MenuItem(props) {
     //create a state isFavorite that has the inital value of isFavorite that comes from the props
-  
+    const [isFavorite, setIsFavorite] = useState(props.isFavorite); 
+
+    function handleClickFavorite(){
+      setIsFavorite((isFavorite) => !isFavorite);
+    }
+
     return (
       <section className="itemContainer">
         <figure className="imgContainer">
@@ -11,12 +19,11 @@ function MenuItem(props) {
           </figcaption>
         </figure>
         <aside>{props.price} EUR</aside>
-  
-        {/* the button to play with the isFavorite state:
-                - onClick, will toggle the isFavorite state,
-                - content will be conditionally rendered as "❤️" or "🖤", depending on the value of isFavorite
-            */}
-        <button type="button">{}</button>
+
+        <button type="button" onClick={handleClickFavorite}>
+        { isFavorite ? ("❤️") : ("🖤")} 
+        </button>
+
       </section>
     );
   }
